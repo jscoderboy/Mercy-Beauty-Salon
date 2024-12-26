@@ -1,0 +1,570 @@
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    /* border:1px so green; */
+}
+:root{
+ --primary-color:#F12498;
+ --secondary-color:#F12498;
+ --dark-color:#272d35;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    
+}
+a{
+    text-decoration:none;
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+}
+/* Utiltiy */
+.container{
+    max-width: 1200px;
+    margin:0 auto;
+    padding:0 2rem;
+}
+.container-sm{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding:0 2rem;
+}
+.btn{
+    display: inline-block;
+    padding:1rem 2.1rem;
+    /* border:1px solid #fff; */
+    /* background: #F12498; */
+    color:#fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    /* trying below style */
+    background-color:#ff141433;
+    background-image: linear-gradient(90deg, #fc6337, #c516e1);
+    border: 1px solid #c11be300;
+    box-shadow: 0 8px 24px #ee217a66;
+    border-style: solid none;
+    font-weight: 600;
+}
+.btn:hover{
+    background: var(--primary-color);
+    color:#fff;
+    /* border-color:#fff; */
+}
+.section-header{
+    max-width: 750px;
+    margin:0 auto;
+    text-align: center;
+    padding:40px 0;
+}
+.service .section-header{
+        background-image: linear-gradient(90deg, #fc6337, #c516e1);
+
+    }
+.section-header h2{
+    font-size:2rem;
+    font-weight: 700;
+    color:#fff;
+    text-transform: uppercase;
+    margin-bottom:0.5rem;
+}
+.heading-border{
+    width:64px;
+    height:4px;
+    background-color: #F12498;
+    margin:0 auto 2rem;
+}
+
+/* Navbar */
+.navbar{
+    background:transparent;
+    color:#fff;
+    padding:1rem 2rem;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 1000;
+    transition:background-color 0.3s ease-in-out;
+}
+.navbar.navbar-scroll{
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+.navbar-flex{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.navbar img{
+    width:40px;
+    height:52px;
+}
+.navbar .main-menu-list{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    font-weight: 600;
+}
+.navbar a{
+    color:#fff;
+}
+.navbar a:hover{
+  color:var(--secondary-color);
+}
+.navbar i{
+    font-size:1.rem;
+}
+.navbar .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+/* Mobile Menu */
+.mobile-menu{
+    display: none;
+}
+.navbar .mobile-menu-toggle{
+    color:#fff;
+    cursor: pointer;
+}
+.navbar .mobile-menu-items{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 0.95;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top:1px solid rgba(255, 255, 255, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+.navbar .mobile-menu-items.active{
+    transform: translateX(0);
+}
+.navbar .mobile-menu-list{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    font-size:1.2rem;
+}
+/* Hero */
+.hero{
+    background:#000000 url('../img/beauty\ \(1\).jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding:11.5rem 2rem 8rem;
+    overflow-x:hidden;
+    color:#fff;
+    position:relative;
+    /* animation */
+    animation-name:fade-animate;
+    animation-direction:alternate-reverse;
+    animation-play-state:running;
+    animation-timing-function:ease-in-out;
+    animation-duration:20s;
+    animation-fill-mode:forwards;
+    animation-iteration-count: infinite;
+    
+}
+
+/* Animation */
+@keyframes fade-animate{
+    0%{
+        background-image: url('../img/beauty\ \(1\).jpg');
+    }
+    20%{
+        background-image: url('../img/beauty\ \(2\).jpg');
+    }
+    40%{
+        background-image: url('../img/beauty\ \(3\).jpg');
+    }
+    60%{
+        background-image: url('../img/beauty\ \(4\).jpg');
+    }
+    80%{
+        background-image: url('../img/beauty\ \(1\).jpg');
+    }
+    100%{
+        background-image: url('../img/beauty\ \(2\).jpg');
+    }
+
+}
+
+.hero .hero-flex{   
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap:6rem;
+    padding-bottom: 8rem;
+    
+}
+.hero-flex::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.hero .hero-content{
+    z-index: 9;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    line-height:1.2;
+    font-weight: 700;
+    margin-bottom:1rem;
+}
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:2rem;
+    line-height:1.8;
+    font-weight: 400;
+}
+/* Services */
+.service{
+    background-image: linear-gradient(106deg, #FFFFFF 0%, #E681E1 100%);
+}
+.service .service-content{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr); 
+    overflow: hidden;
+    
+    /* gap:2rem; */
+}
+.service img{
+    min-height: 500px;
+    height:100%;
+    object-fit: cover;
+}
+.service .service-inner-content{
+    position:relative;
+    max-height:500px;
+}
+.service .service-inner-content{
+    transition: transform 0.3s;
+}
+.service .service-inner-content:hover{
+ transform: scale(1.1);
+ cursor: pointer;
+ z-index: 9;
+}
+.service .service-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    color:#fff;
+    text-transform: uppercase;    
+}
+.service .service-inner-content::before{
+    content: '';
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background: rgba(0, 0, 0, 0.5);
+    
+}
+/* Section Hair */
+.section-hair{
+    padding:40px 0;
+    background:#000;
+    color:#fff;
+    /* background-image: linear-gradient(106deg, #FFFFFF 0%, #E681E1 100%); */
+}
+.section-hair .salon-content{
+    display: flex;
+    justify-content: space-between;
+    gap:3rem;
+}
+.section-hair h2{
+    color:var(--primary-color);
+    font-weight: 700;
+    font-size:2rem;
+    text-transform:uppercase;
+}
+.section-hair .hair-services h2{
+    text-align: center;
+    margin-top:40px;
+    color: #e0b1ed;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, #fc6337, #c516e1);
+    background-clip:text;
+
+}
+.section-hair img{
+max-width:500px;
+}
+.section-hair p{
+    line-height: 1.7;
+    color:#f4f4f4;
+    font-weight: 400;
+}
+.section-hair .hair-services .d-flex{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    flex-wrap: wrap;
+    margin:40px 0;
+}
+.section-hair .hair-services .d-flex > div{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+.section-hair .appointment{
+  text-align: center;
+  margin-bottom:40px;
+}
+.section-hair .appointment .btn{
+    border-radius:5px;
+    border:none;
+    padding:0.8rem 2rem;
+    background-color: #272d35;
+    color:#fff;
+}
+/* Section Discover */
+.discover{
+    background-image: linear-gradient(106deg, #FFFFFF 0%, #E681E1 100%);
+}
+.discover .discover-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.discover .discover-flex h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+    line-height: 1.3;
+    /* color:#33; */
+    color: #e0b1ed;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, #fc6337, #c516e1);
+    background-clip:text;
+}
+.discover .discover-flex h3{
+    font-size:2rem;
+    color:#b1afaf;
+}
+.discover p{
+    margin:20px 0;
+    color:#333;
+}
+.discover img{
+    max-width: 600px;
+}
+/* Newsletter */
+.newsletter{
+    text-align: center;
+    /* margin:0 2rem; */
+    background-image: linear-gradient(106deg, #FFFFFF 0%, #E681E1 100%);
+}
+.newsletter-flex{
+    display: flex;
+    gap:1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:4rem 2rem;
+    background-color: #00000045;
+    color:#fff;
+}
+.newsletter h2{
+    font-size:2rem;
+    font-weight: 700;
+    }
+.newsletter p{
+    max-width: 600px;
+}
+.newsletter input[type="email"]{
+  padding:1rem 2rem;
+  border:1px solid #ccc;
+  border-radius: 32px;
+  width: 100%;
+  max-width: 400px;
+  margin:1rem 0;
+}
+/* Social */
+.social{
+    /* background-image: linear-gradient(106deg, #FFFFFF 0%, #E681E1 100%); */
+    background-color: #333;
+    color:#fff;
+    padding:6rem 2rem;
+    text-align: center;
+    font-size:1.5rem;
+    margin-bottom:0;
+}
+.social a{
+    color:#fff;
+}
+.social a:hover{
+    color:var(--primary-color);
+}
+.social p{
+    margin-bottom:2rem;
+}
+.social .social-icons{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    margin-top:2rem;
+
+}
+/* Footer */
+.footer{
+    background: #333;
+    color:#fff;
+    border-top:1px solid #384653;
+    padding:0.5rem 2rem;
+}
+.footer-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer a{
+    color:#fff;
+}
+.footer a:hover{
+    color:var(--primary-color);
+}
+.footer .footer-links{
+    display: flex;
+    justify-content:center;
+    gap:1rem;
+
+}
+@media(max-width:768px){
+ .main-menu-items{
+  display: none;
+ }
+ .navbar .mobile-menu{
+    display: block;
+ }
+ .navbar .mobile-menu-toggle{
+    display: block;
+    padding:10px;
+ }
+ .service .service-content{
+    grid-template-columns: repeat(2, 1fr);
+ }
+ .section-hair .salon-content{
+    flex-direction: column;
+ }
+ .section-hair img{
+    max-width:100%;
+ }
+ .discover{
+    padding:40px 0;
+ }
+ .discover .discover-flex{
+    flex-direction: column-reverse;
+    text-align: center;
+ }
+ .discover-flex img{
+    max-width: 100%;
+ }
+ .social .social-icons{
+    flex-wrap: wrap;
+ }
+ .footer-flex{
+    flex-direction: column;
+    text-align: center;
+ }
+ .footer{
+    padding:0.5rem 1rem;
+ }
+}
+@media(max-width:576px){
+ .hero h1{
+    font-size:2.5rem;
+    text-transform: uppercase;
+ }
+ .btn{
+ padding:.8rem 1.9rem;
+}
+.navbar{
+    padding-left:0px;
+    padding-right:0px;
+    padding-bottom:0px;
+}
+.hero{
+    padding:13rem 0rem 7.4rem 0rem;
+}
+.section-header{
+    padding:10px;
+}
+.section-header h2{
+    font-size:1.6rem;
+}
+.service .service-content{
+    grid-template-columns: repeat(1, auto);
+}
+.service .service-inner-content h3{
+  font-size:2rem;
+}
+.service .service-text{
+    left:40%;
+    top:40%;
+}
+.section-hair{
+    padding:20px 0;
+}
+.section-hair h2{
+    font-size:2rem;
+}
+.heading-border{
+    margin: 0 auto 1.5rem
+}
+.salon-hair .salon-content{
+    gap:2rem;
+}
+.section-hair p{
+    margin:20px 0 0 0;
+}
+.section-hair .hair-services .d-flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+.hair-services h3, .skin-services h3{
+    font-size:1rem;
+}
+.section-hair span{
+    font-size:2rem;
+}
+.discover .discover-flex h2{
+    font-size:1.8rem;
+}
+.discover .discover-flex h3{
+    font-size:1.5rem;
+}
+.social{
+    font-size:1.2rem;
+ padding:2.8rem 0rem;
+}
+}
